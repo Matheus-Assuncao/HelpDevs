@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpDevs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark text-light vh-100 d-flex justify-content-center align-items-center">
+    <div class="container bg-secondary rounded shadow p-4" style="max-width: 400px;">
+        <!-- Título -->
+        <div class="text-center mb-4">
+            <h1 class="text-light bg-primary rounded py-2">HelpDevs</h1>
+            <p class="text-light-50">Cadastre-se ou faça login para acessar o sistema</p>
+        </div>
+
+        <!-- Formulário -->
+        <form action="/enter" method="post" class="d-flex flex-column" id="LoginForm">
+            <div class="mb-3">
+                <label for="username" class="form-label">Nome:</label>
+                <input type="text" name="username" id="username" class="form-control" placeholder="Digite seu nome"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Senha:</label>
+                <input type="password" name="password" id="password" class="form-control"
+                    placeholder="Digite sua senha" required>
+            </div>
+            <div class="d-grid gap-2 mt-4">
+                <button type="submit" class="btn btn-primary">Entrar</button>
+                <button type="button" class="btn btn-outline-light" onclick="window.location.href='cadastro.html'">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+
+
+<!-- bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+<!-- AXIOS -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- MAIN -->
+ <script type="module" src="../js/main.js"></script>
+</body>
+
+</html>
