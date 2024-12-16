@@ -1,7 +1,7 @@
-POST http://localhost:5244/api/users
+POST http://localhost:5244/api/users/verify
 Content-Type: application/json
 
 {
-  "name": "JUICE WLRD",
-  "password" : "999"
+  "name": "lamelo",
+  "password" : "ball"
 }

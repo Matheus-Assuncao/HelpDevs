@@ -25,9 +25,5 @@ app.UseCors("AllowAll");
 // Mapear os Controllers
 app.MapControllers();
 
-// MySQL
-Conexao c = new(); //Criando conexao
-c.TestarConexao();
-
 // Iniciar o aplicativo
 app.Run();

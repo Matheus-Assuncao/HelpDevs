@@ -1,5 +1,6 @@
 using HelpDevs.Data;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Common;
 
 class UserSQL
 {   
@@ -13,7 +14,7 @@ class UserSQL
     }
 
     //Metodo para cadastrar uma pessoa
-    public void Cadastrar(string nome, string password)
+    public void Cadastrar(string name, string password)
     {
         string sql = "INSERT INTO USERTB(name,password) values(@name,@password)";
 
@@ -21,7 +22,7 @@ class UserSQL
         using var comando = new MySqlCommand(sql, conexao);
         {
             // Especificar parâmetros SQL
-            comando.Parameters.AddWithValue("@name",nome);
+            comando.Parameters.AddWithValue("@name",name);
             comando.Parameters.AddWithValue("@password",password);
 
             //Executar SQL
@@ -35,5 +36,30 @@ class UserSQL
 
             }
         }
+    }
+
+    //Método para verificar se o User existe
+    public bool VerificaUser(string name, string password){
+        using var conexao = new MySqlConnection(_stringDeConexao);
+        
+        //arrumando SQL
+        string sql = "SELECT COUNT(*) FROM usertb WHERE NAME = @name AND PASSWORD = @password";
+        using var comando = new MySqlCommand(sql, conexao);
+
+        comando.Parameters.AddWithValue("@name",name);
+        comando.Parameters.AddWithValue("@password",password);
+
+        //executar SQL
+        try{
+            conexao.Open();
+            var result = Convert.ToInt32(comando.ExecuteScalar());
+            return result>0;
+        }catch(Exception e){
+            Console.WriteLine(e);
+            return false;
+        }finally{
+            conexao.Close();
+        }
+
     }
 }
