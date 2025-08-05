@@ -15,15 +15,18 @@ namespace HelpDevs.Controllers
             _userService = userService;
         }
 
+        //  Account -> Rota Principal 
         [HttpGet]
         public IActionResult Login()
         {
             return View(); // procura Views/Account/Login.cshtml
         }
 
-        [HttpPost]
 
-        public async Task<IActionResult> AddUser(User user)
+
+        //  Account/AddUser -> Rota para Adicionar usuário 
+        [HttpPost]
+        public async Task<IActionResult> Add([FromBody] User user) // http://localhoast:5008/AddUser
         {
             bool sucess = await _userService.AddUser(user);
 
@@ -31,7 +34,7 @@ namespace HelpDevs.Controllers
             {
                 Console.WriteLine("User Criado");
                 Console.WriteLine($"Nome: {user.Name} , Password: {user.Password}");
-                return Ok();
+                return View("AddUser");
             }
             else
             {
@@ -39,6 +42,25 @@ namespace HelpDevs.Controllers
                 return View("Login"); // mostra novamente a tela de login com mensagem
             }
 
+        }
+
+
+        // Account/exists -> usa VerifyUser
+        [HttpPost("Account/Exists")]
+        public async Task<IActionResult> Exists([FromBody] User user)
+        {
+            bool isTrue = await _userService.VerifyUser(user);
+
+            if (isTrue)
+            {
+                Console.WriteLine($"Usuario {user.Name} Autorizado");
+                return Ok();
+            }
+            else
+            {
+                Console.WriteLine("Acesso Negado");
+                return Unauthorized();
+            }
         }
 
 
