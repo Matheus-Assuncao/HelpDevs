@@ -1,74 +1,57 @@
-# HelpDevs - Sistema de Login
+# HelpDevs – MVP de uma Rede Social para Desenvolvedores 🛠️💻
 
-Este projeto é uma aplicação web simples de login, desenvolvida com **ASP.NET Core MVC** e **MySQL**, com o objetivo de praticar autenticação de usuários e estruturação de um backend funcional.
+Este é um projeto simples, criado com o objetivo de **aprender na prática** conceitos de desenvolvimento backend com ASP.NET Core, integração com MySQL, e uso de ferramentas como Git, Postman e Bootstrap.
 
-## 🔧 Tecnologias Utilizadas
+## 🎯 Objetivo do Projeto
 
-- C#
+Criar o MVP (Produto Mínimo Viável) de uma rede social para desenvolvedores. A ideia é permitir que usuários:
+
+- Se cadastrem e façam login
+- Criem posts simples
+- Visualizem um feed
+- Visualizem o perfil de outros usuários
+
+> O projeto está em **fase inicial de desenvolvimento** e servirá como base para aprendizado contínuo e evolução pessoal na carreira como desenvolvedor backend.
+
+## ⚙️ Tecnologias Utilizadas
+
 - ASP.NET Core MVC
 - MySQL
-- MySqlConnector (via NuGet)
-- Bootstrap 5 (para estilização)
-- Postman (para testes de API)
-- Git e GitHub (controle de versão)
+- MySqlConnector
+- Bootstrap 5
+- Postman
+- Git e GitHub
 
-## 🚀 Funcionalidades
-
-- Tela de login estilizada com Bootstrap
-- Verificação de credenciais com banco de dados MySQL
-- Boas práticas com serviços (camada Service)
-- Uso de `async`/`await` para operações assíncronas
-- Estrutura com injeção de dependência
-
-## 📁 Estrutura do Projeto
+## 📁 Estrutura (em construção)
 
 /Controllers
-UserController.cs
 /Models
-User.cs
 /Services
-UserService.cs
-Views/
-Login.cshtml
+/Views
 Program.cs
 appsettings.json
 
-arduino
-Copy
-Edit
+yaml
+Copiar
+Editar
 
-## 🧪 Como testar o login com Postman
+## 👨‍💻 Autor
 
-1. Selecione o método `POST`
-2. Use a URL: `http://localhost:5000/Account/exists`
-3. No Body (JSON), envie:
+Desenvolvido por Matheus Assunção – estudante de Engenharia da Computação.
 
-json
-{
-  "name": "usuario",
-  "password": "senha"
-}
-Se o usuário existir, a resposta será 200 OK. Caso contrário, a view de login será retornada.
+---
 
-🛠️ Como rodar o projeto
-Configure a string de conexão no appsettings.json
+## 📌 Status do Projeto
 
-Execute o projeto no Visual Studio ou via terminal com:
+✅ Login e verificação de usuário conectados ao banco  
+⚙️ Próximos passos: feed, postagens e estilização de telas
 
-bash
-Copy
-Edit
-dotnet run
-Acesse a aplicação em http://localhost:5000
+---
 
-💡 Próximos Passos
-Implementar registro de usuários
+## 🚀 Aprendizados até aqui
 
-Criar sistema de sessão/autenticação completa
-
-Melhorar segurança (hash de senhas)
-
-Criar testes automatizados
-
-🤝 Contribuição
-Este projeto foi desenvolvido para fins de estudo. Fique à vontade para sugerir melhorias ou abrir pull requests.
+- Padrao MVC
+- Como criar rotas e controllers no ASP.NET
+- Como conectar com banco de dados usando ADO.NET e MySqlConnector
+- Testar rotas com Postman
+- Trabalhar com Git e branches no dia a dia de projeto
