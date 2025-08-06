@@ -31,9 +31,6 @@ Criar o MVP (Produto Mínimo Viável) de uma rede social para desenvolvedores. A
 Program.cs
 appsettings.json
 
-yaml
-Copiar
-Editar
 
 ## 👨‍💻 Autor
 
