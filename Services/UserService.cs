@@ -33,7 +33,7 @@ namespace HelpDevs.Data
                 int result = await cmd.ExecuteNonQueryAsync();
 
                 Console.WriteLine("Adicionado.");
-                return result > 0; //Retorna valor boolx se o resultado deu certo
+                return result > 0; //Retorna valor bool se o resultado deu certo
 
             }
 

@@ -3,15 +3,16 @@ using Microsoft.VisualBasic;
 
 namespace HelpDevs.Models
 {
-    public class PostModel
+    public class Post
     {
         int Id { get; set; }
-        string Text { get; set; }
-        User _User;
 
-        DateAndTime DatePosted { get; set; }
+        public User _User;
+        public string Text { get; set; }
 
-        public PostModel(User user)
+        public DateAndTime DatePosted { get; set; }
+
+        public Post(User user)
         {
             _User = user;
         }
